@@ -104,24 +104,7 @@
 MAMMOTH CE/CE-MC DaliLite VAST PrISM SSAP SARF2 KENOBI/K2 STAMP MASS SCALI DEJAVU SSM SHEBA LGA POSA PyMOL FATCAT Matras MAMMOTH-mult Protein3Dfit PRIDE FAST C-BOP ProFit TOPOFIT MUSTANG URMS LOCK LOCK 2 CBA TetraDA STRAP LOVOALIGN GANGSTA GANGSTA+ TM-align MatAlign Vorolign EXPRESSO CAALIGN YAKUSA BLOMAPS CLEPAPS TALI F MolCom MALECON FlexProt MultiProt CTSS CURVE Matt TopMatch SSGS Matchprot UCSF Chimera  FLASH RAPIDO ComSubstruct ProCKSI SARST Fr-TM-align TOPS+ COMPARISON TOPS++ FATCAT MolLoc FASE SABERTOOTH STON SALIGN MAX-PAIRS THESEUS TABLEAUSearch QP Tableau Search ProSMoS MISTRAL MSVNS for MaxCMO Structal ProBiS ALADYN SWAPSC SA Tableau Search
 \end{small}
 \end{center}
-\end{frame}
-
-% Цель: реализовать такой инструмент в продукте UniPro UGENE
-% Задачи: построение, визуализация, импорт/экспорт, оформление, основа для дальнейшего развития
-\begin{frame}{Цель работы}
-\begin{center}
-\Large Реализовать инструменты построения и анализа структурного выравнивания для проекта UGENE
-\end{center}
-\vspace{11pt}
-Задачи
-\begin{itemize}
-	\item Поиск и интеграция существующего алгоритма 
-	\item Интерактивная визуализация выравнивания
-	\item Поддержка сохранения/загрузки результатов 
-	\item API для дальнейшего развития
-	\item Тестирование и покрытие автоматическими тестами
-\end{itemize}
-\end{frame}
+\end{frame} 
 
 % Пара слов о UGENE. Объединяет множество инструментов в одном формате.
 % Уже имеет инструменты выравнивания последовательностей, визуализации макромолекул, ограниченную поддержку PDB
@@ -142,31 +125,62 @@ MAMMOTH CE/CE-MC DaliLite VAST PrISM SSAP SARF2 KENOBI/K2 STAMP MASS SCALI DEJAV
 \end{frame}
 
 % Слайд UGENE #2 - Преимущества, что уже есть
-\begin{frame}{UGENE}
+\begin{frame}{Преимущества UGENE}
 
 \begin{columns}[c]
-\column{0.65\linewidth}
-	Основные преимущества
-	\begin{itemize}
-		\item Проект активно развивается
-		\item Объединяет десятки популярных инструментов биолога
-		\item Более 10\textsuperscript{6} строк кода, более 5000 автоматических тестов
-		\item Поддерживает Windows, Linux и Mac
-		\item Входит в официальную поставку дистрибутивов Ubuntu и Fedora
-		\item Cообщество $\sim$1000 пользователей
-		\item Код доступен в соотвествии с лицензией GPL, публичный багтрекер, форум, видео-подкаст
-	\end{itemize}
+	\column{0.67\linewidth}
+		\begin{itemize}
+			\item Проект активно развивается
+			\item Объединяет десятки популярных инструментов биолога
+			\item Более {\bf 10\textsuperscript{6}} строк кода, более {\bf 5000} автоматических тестов
+			\item Платформы {\bf Windows}, {\bf Linux} и {\bf Mac}
+			\item Входит в официальную поставку дистрибутивов {\bf Ubuntu} и {\bf Fedora}
+			\item Сообщество {\bf $\sim$1000} пользователей
+			\item Код доступен по лиценззи {\bf GPL} 
+			\item публичный багтрекер, форум, видео-подкаст
+		\end{itemize}
 	
-\column{0.4\linewidth}
-	\center{\includegraphics[width=0.8\linewidth]{gnu.png}}
-	\center{\includegraphics[width=0.8\linewidth]{platforms.png}}
-	
+	\column{0.4\linewidth}
+		\center{\includegraphics[width=0.8\linewidth]{gnu.png}}
+		\center{\includegraphics[width=0.8\linewidth]{platforms.png}}
 \end{columns}
 
 \end{frame}
 
-\begin{frame}
+% Цель: реализовать такой инструмент в продукте UniPro UGENE
+% Задачи: построение, визуализация, импорт/экспорт, оформление, основа для дальнейшего развития
+\begin{frame}{Цель работы}
+\begin{center}
+\Large Реализовать инструменты построения и анализа структурного выравнивания для проекта UGENE
+\end{center}
+\vspace{11pt}
+Задачи
+\begin{itemize}
+	\item Поиск и интеграция существующего алгоритма 
+	\item Интерактивная визуализация выравнивания
+	\item Поддержка сохранения/загрузки результатов 
+	\item Общий API для алгоритмов выравнивания
+	\item Тестирование и покрытие автоматическими тестами
+\end{itemize}
 \end{frame}
+
+% Результаты
+\begin{frame}{Результаты}
+\begin{itemize}
+	\item Сделан обзор библиотек, выбрана и встроена библиотека {\bf PTools}: an opensource molecular docking library
+		\begin{itemize}
+			\item[-] Алгоритм Sippl MJ, Stegbuchner H 
+			\item[-] Совместимая лицензия GPL
+			\item[-] Написана на C/C++
+		\end{itemize}
+	\item Реализована визуализация выравнивания в BioStruct3D
+	\item Добавлена инфраструктура для алгоритмов выравнивания (интерфейсы и типы данных)
+	\item Добавлены автоматические тесты
+	\item Множество исправлений и улучшений в BioStruct3D
+
+\end{itemize}
+\end{frame}
+
 
 % Спасибо за внимание
 \begin{frame}{Q\&A}
