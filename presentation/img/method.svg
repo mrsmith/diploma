@@ -13,8 +13,8 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.0 r9654"
-   sodipodi:docname="New document 1">
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="method.pdf">
   <defs
      id="defs4">
     <inkscape:path-effect
@@ -124,7 +124,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="258.51"
+     inkscape:cx="129.21047"
      inkscape:cy="710.04626"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -133,9 +133,9 @@
      inkscape:snap-intersection-paths="true"
      inkscape:snap-global="false"
      inkscape:snap-grids="true"
-     inkscape:window-width="1680"
-     inkscape:window-height="1003"
-     inkscape:window-x="-3"
+     inkscape:window-width="1920"
+     inkscape:window-height="1060"
+     inkscape:window-x="1278"
      inkscape:window-y="-3"
      inkscape:window-maximized="1" />
   <metadata
@@ -156,7 +156,7 @@
      id="layer1">
     <g
        id="g4063"
-       transform="matrix(0.82168835,0.56993707,-0.56993707,0.82168835,265.92987,-49.682952)">
+       transform="matrix(2.4334394,1.6878751,-1.6878751,2.4334394,343.38867,-1190.0074)">
       <path
          inkscape:original-d="m 217.52898,383.24727 c 0,0 -76.57766,19.02204 -14.64286,52.49999 27.88279,15.07163 -1.78571,25.71429 -1.78571,25.71429"
          inkscape:path-effect="#path-effect3009-5"
@@ -268,7 +268,7 @@
     </g>
     <g
        id="g4050"
-       transform="matrix(-0.99052972,0.13729847,-0.13729847,-0.99052972,579.30259,794.1851)">
+       transform="matrix(-2.933465,0.40661098,-0.40661098,-2.933465,1271.4455,1309.1174)">
       <path
          inkscape:original-d="m 284.44209,384.85441 c 0,0 -85.33728,6.31855 -10,46.7857 25.45243,13.67168 -7.85714,25.17858 -7.85714,25.17858"
          inkscape:path-effect="#path-effect3011-4"
@@ -380,7 +380,7 @@
     </g>
     <g
        id="g4193"
-       transform="matrix(0.80565643,0.59238308,-0.59238308,0.80565643,487.31287,-127.32661)">
+       transform="matrix(2.3859607,1.7543492,-1.7543492,2.3859607,999.01692,-1419.95)">
       <g
          id="g4063-7"
          transform="translate(9.3080361,98.237339)">
@@ -608,42 +608,53 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="159.09901"
-       y="471.27194"
+       style="font-size:29.61511421px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="28.01804"
+       y="346.35516"
        id="text4330"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4332"
-         x="159.09901"
-         y="471.27194">reference</tspan></text>
+         x="28.01804"
+         y="346.35516">reference</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="241.93153"
-       y="471.27194"
+       style="font-size:29.61511421px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="273.32748"
+       y="346.35516"
        id="text4334"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4336"
-         x="241.93153"
-         y="471.27194">mobile</tspan></text>
+         x="273.32748"
+         y="346.35516">mobile</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.71766847;stroke-opacity:1"
-       d="m 308.25941,394.19072 0,2.0293 -19.99901,0 0,6.44302 19.99901,0 0,2.0293 6.88855,-5.25927 -6.88855,-5.24235 z"
+       style="fill:none;stroke:#000000;stroke-width:2.12538338;stroke-opacity:1"
+       d="m 468.74809,124.52943 0,6.00979 -59.2273,0 0,19.08108 59.2273,0 0,6.00979 20.40052,-15.57539 -20.40052,-15.52527 z"
        id="rect4342"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="294.09241"
-       y="390.96481"
+       style="font-size:29.61511421px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="426.79236"
+       y="114.97586"
        id="text4349"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4351"
-         x="294.09241"
-         y="390.96481"
-         style="font-size:15px">T</tspan></text>
+         x="426.79236"
+         y="114.97586"
+         style="font-size:44.42266846px">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:29.61511421px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="514.92181"
+       y="346.35516"
+       id="text4334-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4336-2"
+         x="514.92181"
+         y="346.35516">alignment</tspan></text>
   </g>
 </svg>
