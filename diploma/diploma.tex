@@ -1,49 +1,91 @@
 \documentclass[a4paper, 12pt, titlepage, utf8]{extarticle}
+    \usepackage[utf8]{inputenc}
+    \usepackage[english,russian]{babel}
+    \usepackage[left=3cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
+\let\oldsection\section         % каждая секция с новой страницы
+\renewcommand{\section}{\newpage\oldsection}
 
-% TODO титульник и оформление
+% TODO:
+%       титульник и оформление
 %	содержание
 %	список литературы
 %	спеллчек
 
 \begin{document}
 
+% -------------------- Содержание--------------------------------------
 \tableofcontents
-\pagebreak
+\newpage
 
-% -------------------- Введение --------------------
+% -------------------- Введение ---------------------------------------
 \section{Введение}	% название данной секции стандартно
 
 Исследования в области биоинформатики приобретают высокую актуальность в наши дни. Современные вычислительные мощности позволяют обрабатывать большие объемы данных характерные для биологических объектов, и выполнять сложные математические расчеты за приемлемое время. Биоинформатика позволяет исследователям эффективно автоматизировать обработку экспериментальных данных, а в ряде случаев решать поставленные задачи аналитически, не прибегая к дорогостоящим и длительным экспериментам.
 
 Одним из важнейших напралений в молекулярной биологии и фармацевтике является структурная биология, объектами изучения которой являются структуры биологических макромолекул, в частности белков и нуклеиновых кислот. Свойства и назначение этих соединений во многом определяются их структурой. Поэтому исследование структуры биополимеров позволяет лучше понимать процессы, протекающие в живом организме, находить связи между биологическими объектами и выяснять причины возникновения возможных паталогий и заболеваний а значит создавать новые высокоэффективные препараты. Инструменты анализа созданные с помощью вычислительной биологии способствуют достижению этих целей и являются неотемлемой частью современной науки. Существует множество методов автоматизации анализа структур таких как трехмерная визуализация, построение структурного выравнивания, предсказание вторичной и третичной структур белка из кодирующей последовательности, моделирование функциональности и взаимодействия биополимеров и другие.
 
-Необходимым средством анализа биологических структур является инструмент построения структурного выравнивания, позволяющий сравнивать структуры между собой. Целью данной работы является разработка такого инструмента на базе проекта с открытым исходным кодом Unipro UGENE. UGENE -- это комплексный инструмент автоматизации биологических исследований, поддерживающий большое количество средств анализа последовательностей ДНК, РНК и аминокислот. UGENE является мультиплатформенным приложением, позволяющим достичь максимальной производительности работы алгоритмов за счет платформо-зависимых оптимизаций и адаптирования алгоритмов для выполнения в многопоточных средах. В настоящий момент в UGENE уже реализованы средства визуализации трехмерных структур а так же некоторые методы структурного анализа, таким образом реализация инструмента построения структуроного выравнивания является закономерным шагом в развитии проекта в данной области.
+Необходимым средством анализа биологических структур является инструмент построения структурного выравнивания, позволяющий сравнивать структуры между собой. Целью данной работы является разработка такого инструмента на базе проекта с открытым исходным кодом Unipro UGENE(link:ugene.unipro.ru). UGENE -- это комплексный инструмент автоматизации биологических исследований, поддерживающий большое количество средств анализа последовательностей ДНК, РНК и аминокислот. UGENE является мультиплатформенным приложением, позволяющим достичь максимальной производительности работы алгоритмов за счет платформо-зависимых оптимизаций и адаптирования алгоритмов для выполнения в многопоточных средах. В настоящий момент в UGENE уже реализованы средства визуализации трехмерных структур а так же некоторые методы структурного анализа, таким образом реализация инструмента построения структуроного выравнивания является закономерным шагом в развитии проекта в данной области.
 
 Использование разработанного компонента в совокупности с уже существующим инструментарием UGENE даст возможность эффективней решать сложные многоэтапные задачи, связанные с макромолекулярными структурами, что несомненно повысит результативность работы исследователей в этой области.
 
+
+% -------------------- Описание предметной области --------------------
 \section{Описание предметной области}	% название данной секции стандартно
+Структурная биология это важная и обширная область биологии, охватывающая большой спектр объектов и явлений. Ниже будет дано понятие "биологическая макромолекулярная структура". В общем случае применимое как к белкам так и к нуклеиновым кислотам (ДНК, РНК), но далее понятие "биологическая макромолекулярная структура" будут рассматриваются применительно только к белкам. Так же будет дано представление о структурном выравнивании. Кратко будут рассмотрены базы данных хранящие информацию об известных структурах. 
 
-\subsection{О структуре белка}
-Третичная структура это трехмерная модель молекулы белка (или все же биополимера?). Структура молекулы играет важнейшую роль. Средний протеин содержит 300? остатков а значит всего 20\^300(это кстати больше чем атомов во вселенной) вариантов из которых в живых организмах присутствуют очень маленькое число. Вариантов сворачивания белка тоже до черта. Структурная биология важное направление в биологии. Она активно развивается. Сейчас эти структуры получают такими: NMR, X-Ray методами а так же моделируют (предсказывают). Сегодня выпускают по N (книга Structural Bioinformatics) в месяц и уже известно M? структур.
-Клевое слово метаинформация
+\subsection{Понятие биологической макромолекулярной структуры}
+Биологическая макромолекулярная структура или трехмерная структура представляет собой набор трехмерных координат атомов образующих молекулу биополимера. Координаты атомов биополимера могут быть получены экспериментально с помощью методов рентгеноскопии и атомной спектроскопии или же предсказаны теоретически с помощью вычислительных алгоритмов исходя из кодирующей последовательности. Знание пространственной структуры молекулы необходимо так как именно от неё в значительной степени зависит функциональное назначение биополимера и проявляемые им свойства. Механика взаимодействия молекул так же зависит от их пространственного строения а так же от их взаимного расположения. 
 
-\subsection{О формате PDB}
-и о базе тоже
-В него можно писать выравнивания -- PROFIT!
+Принято выделять следуюище уровни организации биологической структуры:
+\begin{itemize}
+    \item Первичная структура или кодирующая последовательность -- последовательность нуклеотидов для ДНК, РНК или аминокислот для белков
+    \item Вторичная структура -- локальное упорядочивание фрагмента главной цепи макромолекулы
+    \item Третичная структура -- пространственное строение всей макромолекулы (набор пространственных координат составляющих её атомов)    
+    \item Четверичная структура или доменная -- взаимное расположение нескольких макромолекул в составе единого комплекса
+\end{itemize}
 
-\subsection{О структурном выравнивании}
-Структурное выравнивание -- это метод определения схожести структур по их третичной структуре.% зафиксировать уже это определение % 
-Структурное выравнивание является важным инструментом имеет несколько важных применений:
-	(взято из книги Structural Bioinformatics)
-	- Классификация белков по группам, и создание библиотек паттернов для последующего аннотирования
-	- Сравнение белка с известной функцией против неизвестного белка может помочь определить его функциональное назначение 
-	- Методы предсказания структуры требуют сравнения предсказанных структур с заранее известными шаблонами
-	- Структурное выравнивание может выявить связь между белками неявную из выравнивания последовательностей (там еще есть но пока непонятно)
-	- ???
-	- PROFIT!
+Таким образом биологическая макромолекулярная структура может включать в себя: информацию о кодирующей последовательности, которая неявно содержит в себе информацию о химических связях и экиввалентна химической формуле биополимера; информацию о вторичной структуре и доменах (функциональных областях молекулы), которая полностью задается кодирующей последовательностью; информацию о пространственном строении молекулы. Так же обычно включают граф химических связей явно описывающей все соединения между атомами. 
+% TODO: Rewrite this
+Этот граф не всегда может быть полностью задан кодирующей последовательностью, так как молекула может содержать нестандартные модификации (например ковалентные связи между двумя остатками цистеина в белках).
+
+Кроме того структура может содержать различную метаинформацию: описание кристаллографической ячейки, сведения о том, как была получена структура, о её функциональных особенностях, ссылки на начуные статьи и так далее.
+(picture: трехмерная модель молекулы)
+
+\subsection{База данных трехмерных структур PDB}
+В настоящее время сущесвует несколько общедоступных баз данных, аккумулирующих данные об известных структурах. Основной базой можно назвать Protein Data Bank (link: pdb.org) в ней доступны все известные на сегодняшний день структуры (более 73000). Лаборатории, специализирующиеся на изучении структур пополняют в первую очередь эту базу данных. Данные хранятся в одноименном текстовом формате. В связи с тем что формат PDB создавался довольно давно, он содержит ряд существенных недостатков. Среди них главным является практически полное отсутствие информации о графе химических связей, что существенно затрудняет чтение структуры из файла PDB. Существуют более современные базы данных и форматы расширяющие и верифицирующие данные PDB, например база данных NCBI Molecular
+Modeling DataBase (MMDB). 
+
+Тем не менее формат PDB широко распространен и поддерживается многими инструментами для анализа структур. В том числе, он хорошо подходит для записи результатов структурного выравнивания, о котором пойдет речь ниже.
+
+\subsection{Структурное выравнивание}
+Одним из важных направлений анализа трехмерных структур является поиск сходства среди макромолекул. Эта проблема является прямой аналогией с очень распространенной в биоинформатике задачей поиска схожих последовательностей. Отличием здесь является то, что поиск основан на нахождении общих черт трехмерных моделей. Иными словами структурное выравнивание -- это способ определения степени схожести молекул по их трехмерной структуре.
+
+Структурное выравнивание является важным инструментом структурной биологии и имеет множество возможных применений, среди них(link: Structural Bioinformatics):
+\begin{itemize}
+    \item Классификация структур по группам и создание библиотек паттернов для последующего аннотирования
+    \item Сравнение белка с известной функцией против неизвестного белка может помочь определить его функциональное назначение 
+    \item Методы предсказания структуры требуют сравнения предсказанных структур с заранее известными шаблонами для оценки качества
+    \item Структурное выравнивание может выявить связь между белками неочевидную исходя из выравнивания последовательностей 
+    \item Структурное выравнивание необходимо при конструировании искусственных молекул
+\end{itemize}
+
+% в тексте ниже есть несколько ссылок из википедии их надо включить обязательно
+The outputs of a structural alignment are a superposition of the atomic coordinate sets and a minimal root mean square deviation (RMSD) between the structures. The RMSD of two aligned structures indicates their divergence from one another. Structural alignment can be complicated by the existence of multiple protein domains within one or more of the input structures, because changes in relative orientation of the domains between two structures to be aligned can artificially inflate the RMSD.
+
+Types of comparisons
+
+Because protein structures are composed of amino acids whose side chains are linked by a common protein backbone, a number of different possible subsets of the atoms that make up a protein macromolecule can be used in producing a structural alignment and calculating the corresponding RMSD values. When aligning structures with very different sequences, the side chain atoms generally are not taken into account because their identities differ between many aligned residues. For this reason it is common for structural alignment methods to use by default only the backbone atoms included in the peptide bond. For simplicity and efficiency, often only the alpha carbon positions are considered, since the peptide bond has a minimally variant planar conformation. Only when the structures to be aligned are highly similar or even identical is it meaningful to align side-chain atom positions, in which case the RMSD reflects not only the conformation of the protein backbone but also the rotameric states of the side chains. Other comparison criteria that reduce noise and bolster positive matches include secondary structure assignment, native contact maps or residue interaction patterns, measures of side chain packing, and measures of hydrogen bond retention.[3]
+[edit]Structural superposition
+The most basic possible comparison between protein structures makes no attempt to align the input structures and requires a precalculated alignment as input to determine which of the residues in the sequence are intended to be considered in the RMSD calculation. Structural superposition is commonly used to compare multiple conformations of the same protein (in which case no alignment is necessary, since the sequences are the same) and to evaluate the quality of alignments produced using only sequence information between two or more sequences whose structures are known. This method traditionally uses a simple least-squares fitting algorithm, in which the optimal rotations and translations are found by minimizing the sum of the squared distances among all structures in the superposition.[4] More recently, maximum likelihood and Bayesian methods have greatly increased the accuracy of the estimated rotations, translations, and covariance matrices for the superposition.[5][6]
+Algorithms based on multidimensional rotations and modified quaternions have been developed to identify topological relationships between protein structures without the need for a predetermined alignment. Such algorithms have successfully identified canonical folds such as the four-helix bundle.[7] The SuperPose method is sufficiently extensible to correct for relative domain rotations and other structural pitfalls.[8]
+[edit]Algorithmic complexity
+
+[edit]Optimal solution
+the optimal "threading" of a protein sequence onto a known structure and the production of an optimal multiple sequence alignment have been shown to be NP-complete.[9][10] However, this does not imply that the structural alignment problem is NP-complete. Strictly speaking, an optimal solution to the protein structure alignment problem is only known for certain protein structure similarity measures, such as the measures used in protein structure prediction experiments, GDT_TS[2] and MaxSub.[11] These measures can be rigorously optimized using an algorithm capable of maximizing the number of atoms in two proteins that can be superimposed under a predefined distance cutoff.[12] Unfortunately, the algorithm for optimal solution is not practical, since its running time depends not only on the lengths but also on the intrinsic geometry of input proteins.
+[edit]Approximate solution
+Approximate polynomial-time algorithms for structural alignment that produce a family of "optimal" solutions within an approximation parameter for a given scoring function have been developed.[12][13] Although these algorithms theoretically classify the approximate protein structure alignment problem as "tractable", they are still computationally too expensive for large scale protein structure analysis. As a consequence, practical algorithms that converge to the global solutions of the alignment, given a scoring function, do not exist. Most algorithms are, therefore, heuristic, but algorithms that guarantee the convergence to at least local maximizers of the scoring functions, and are practical, have been developed.[14]
+[edit]
 
 Тут надо как-то аккуратно рассказать о том что не все йогурты одинаково полезны, например есть алгоритмы тупо сравнивающие облака точек одинакого размера, это то любой школьник может !привет моя реализация! и их-то как грязи; а есть те которые стравнивают вообще ни разу непохожие структуры вот они то и крутые, есть варианты как в химере [и ссылочку на статью] которые строят на основе выравнивания последовательностей и тоже там какие-то результаты получают
 
@@ -57,6 +99,7 @@
 
 Существует множество алгоритмов для решения данной задачи. 
 
+% -------------------- Постановка задачи ------------------------------
 \section{Постановка задачи}	% название данной секции стандартно
 
 Цель работы -- заиметь такой еба алгоритм в виде готового инструмента у себя в UGENE. 
@@ -70,6 +113,7 @@
 
 %%\section{Анализ задачи} Пока непонятно, вроде это уже написано выше в постановке.
 
+% -------------------- Реализация -------------------------------------
 \section{Реализация}
 \subsection{Внутреннее представление данных UGENE}
 UGENE имеет внутреннее представление структуры молекулы не зависящее от конкретного формата а так же DocumentFormat что позволяет абстрагироваться от конкретного формата а так же сравнительно легко добавлять поддержку новых форматов.
