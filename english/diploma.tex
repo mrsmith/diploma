@@ -1,6 +1,7 @@
 \documentclass[a4paper, 12pt, titlepage, utf8]{extarticle}
+    \usepackage[T2A]{fontenc}
     \usepackage[utf8]{inputenc}
-    \usepackage[english,russian]{babel}
+    \usepackage[english]{babel}
     \usepackage[left=3cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
     \usepackage{color}
     \usepackage{amsmath}
@@ -41,7 +42,7 @@
 \subfloat[#2]{\label{fig:#3}\includegraphics[#1]{#3}}
 }
 
-\newcommand{\lookat}[1]{см. рис.~\ref{#1}}
+\newcommand{\lookat}[1]{see fig.~\ref{#1}}
 
 \bibliographystyle{gost780u}
 %\bibliographystyle{unsrt}
@@ -52,7 +53,7 @@
 \newcommand{\method}{\textit}
 
 \addto\captionsenglish{
-    %\renewcommand\contentsname{Contents}
+    %\renewcommand\contentsname{Содержание}
     % перекрываю \refname, чтобы список литературы сам добавлял себя в оглавление
     \let\oldrefname\refname
     \renewcommand\refname{\addcontentsline{toc}{section}{\oldrefname}\oldrefname}
@@ -71,7 +72,7 @@
 }{
 \endgroup
 }
-%\excludecomment{original} % скрывает текст внутри окружения original
+\excludecomment{original} % скрывает текст внутри окружения original
 
 \begin{document}
 
@@ -84,29 +85,68 @@
 
 % -------------------- Введение ---------------------------------------
 \section{Introduction}      % название данной секции стандартно
-Исследования в области биоинформатики приобретают высокую актуальность в наши дни. Современные вычислительные мощности позволяют обрабатывать большие объемы данных характерные для биологических объектов, и выполнять сложные математические расчеты за приемлемое время. Биоинформатика позволяет исследователям эффективно автоматизировать обработку данных, и в ряде случаев решать поставленные задачи аналитически, не прибегая к дорогостоящим и длительным экспериментам.
+\begin{original}
+Исследования в области биоинформатики приобретают высокую актуальность в наши дни.
+Современные вычислительные мощности позволяют обрабатывать большие объемы данных характерные для биологических объектов, и выполнять сложные математические расчеты за приемлемое время. Биоинформатика позволяет исследователям эффективно автоматизировать обработку данных, и в ряде случаев решать поставленные задачи аналитически, не прибегая к дорогостоящим и длительным экспериментам.
+\end{original}
 
+Research in the field of bioinformatics has highest relevance nowdays.
+Modern computational power allows to deal with large volumes of data typical for biological objects, and perform complex mathematical calculations in a reasonable time. Bioinformatics tools allow researchers to efficiently automate the processing of data, and in some cases, to solve problems analytically, without carrying out costly and time-consuming experiments.
+
+\begin{original}
 Одной из важнейших областей исследования в биологии, физиологии и фармацевтике является изучение биологических макромолекулярных структур, в частности белков и нуклеиновых кислот. Свойства и назначение этих соединений во многом определяются их структурой. Поэтому исследование структуры биополимеров позволяет лучше понимать процессы, протекающие в живом организме, находить связи между биологическими объектами и выяснять причины возникновения возможных патологий и заболеваний а значит создавать новые высокоэффективные препараты. Инструменты анализа созданные с помощью вычислительной биологии способствуют достижению этих целей и являются неотъемлемой частью современной науки. Существует множество методов автоматизации анализа структур таких как трехмерная визуализация,  структурное выравнивание, предсказание вторичной и третичной структур белка из кодирующей последовательности, моделирование функциональности и взаимодействия биополимеров и другие.
+\end{original}
 
+One of the major fields of research in biology, physiology and pharmaceutics is the study of biological macromolecular structures, in particular proteins and nucleic acids. Properties and function of these compounds are largely determined by their structure. Therefore, investigation of the structure of biopolymers can help to understand the processes occurring in living organisms, to find relations between biological objects and investigate the possible causes of pathologies and diseases and thus create new high-performance medicine. Analysis tools created by the computational biology contribute to the achievement of these goals and are an integral part of modern science. There are many methods for automating the analysis of structures such as three-dimensional visualization, structural alignment, the prediction of secondary and tertiary structures based on the protein coding sequence, the biopolymers function simulation and others.
+
+\begin{original}
 Необходимым средством анализа при решении ряда задач структурной биологии, таких как: поиск гомологии среди объектов, классификация по структурным особенностям, определение функционального назначения и предсказание структуры биополимеров, является инструмент построения структурного выравнивания, позволяющий сравнивать структуры между собой.
+\end{original}
 
+An essential tool for the structure analysis is a tool for building structural alignment, allowing the structure to compare with each other. It is necessary for solving number of structural biology problems, such as: search for homology among the objects, the classification of structural features, the definition of functionality and structure prediction of biopolymers, 
+
+\begin{original}
 Целью данной работы является разработка инструмента построения структурного выравнивания и средств его визуализации. Работа выполняется базе проекта с открытым исходным кодом Unipro UGENE \cite{ugene}. UGENE -- это комплексный инструмент автоматизации биологических исследований, поддерживающий большое количество средств анализа последовательностей ДНК, РНК и аминокислот. UGENE является мультиплатформенным приложением, позволяющим достичь максимальной производительности работы за счет платформо-зависимых оптимизаций и адаптации алгоритмов для выполнения в многопоточных средах. В настоящий момент в UGENE уже реализованы средства визуализации трехмерных структур, а также некоторые базовые методы структурного анализа, таким образом, реализация инструмента построения структурного выравнивания является закономерным шагом в развитии проекта.
+\end{original}
 
+The aim of this work is the development of tool for building and visualizing structural alignment which is based on the open source project Unipro UGENE \cite {ugene}. UGENE is a comprehensive tool for automating biological research, which supports a large number of tools for analyzing sequences of DNA, RNA and amino acids. UGENE is a multiplatform application that allows you to achieve maximum productivity through platform-specific optimizations. At the moment UEGENE is capable of visualizing three-dimensional structures, as well as some of the basic methods of structural analysis, therefore the implementation tools of structural alignment is a natural step in the evolution of the project.
+
+\begin{original}
 Интеграция разработанных компонентов с уже существующим набором средств UGENE позволит создать комплексный инструмент многоуровневого анализа биологических объектов, который даст возможность эффективней решать сложные многоэтапные задачи, связанные с макромолекулярными структурами, что несомненно повысит результативность работы исследователей в этой области. 
+\end{original}
+
+The integration of components developed with an existing set of UGENE tools will bring a comprehensive tool for multi-level analysis of biological objects. This tool will enable more effective solutions for complex multi-step tasks associated with macromolecular structures, and will undoubtedly increase the efficiency of researchers in this field. 
+
 % В чем научная новизна?
 
 
 % -------------------- Описание предметной области --------------------
 \section{Overview of the subject area}	% название данной секции стандартно
+\begin{original}
 Анализ макромолекулярных структур это обширная область исследований в современной биологии. Она охватывает большой спектр объектов и явлений и располагает множеством инструментов вычислительной биологии. Ниже речь пойдет о структурном выравнивании, одном из базовых методов анализа структур. Также будет конкретизирован термин <<биологическая макромолекулярная структура>> и рассмотрена база данных PDB, предназначенная для хранения описаний структур.
+\end{original}
 
+The analysis of macromolecular structures is a vast area of research in modern biology. It covers a wide range of objects and phenomena and offers many tools for computational biology. Here we will focus on the structural alignment, one of the basic methods of analysis of structures.
+
+\begin{original}
 В рамках этой работы, термин <<биологическая макромолекулярная структура>> рассматривается применительно к белкам, тем не менее, некоторые методы структурного анализа, например, структурное выравнивание, возможно обобщить и для нуклеиновых кислот (ДНК и РНК).
+\end{original}
+
+At first the term "biological macromolecular structure" will be defined. Note that this term is applied to the proteins, however some methods of structural analysis, for example structural alignment may be generalized to the nucleic acids (DNA and RNA).
 
 \subsection{Definition of macromolecular biostructure}
-В общем случае биологическая макромолекулярная структура представляет собой набор трехмерных координат образующих её атомов (\lookat{fig:biostructure}). Эти координаты могут быть получены экспериментально с помощью методов рентгеноскопии и атомной спектроскопии или предсказаны теоретически исходя из кодирующей последовательности с помощью вычислительных алгоритмов. Знание пространственной структуры биополимера необходимо, так как именно от неё в значительной степени зависит функциональное назначение биополимера и проявляемые им свойства. Механика взаимодействия макромолекул тоже во многом определяется их трехмерной структурой и взаимным расположением в пространстве. 
+\begin{original}
+В общем случае биологическая макромолекулярная структура представляет собой набор трехмерных координат образующих её атомов (\lookat {fig: biostructure}). Эти координаты могут быть получены экспериментально с помощью методов рентгеноскопии и атомной спектроскопии или предсказаны теоретически исходя из кодирующей последовательности с помощью вычислительных алгоритмов. Знание пространственной структуры биополимера необходимо, так как именно от неё в значительной степени зависит функциональное назначение биополимера и проявляемые им свойства. Механика взаимодействия макромолекул тоже во многом определяется их трехмерной структурой и взаимным расположением в пространстве. 
 
-\includefigure[width=0.8\linewidth]{Условное изображение молекулы белка (1GNA)}{biostructure}
+%\includefigure[width=0.8\linewidth]{Условное изображение молекулы белка (1GNA)}{biostructure}
+\end{original}
 
+In general, the biological macromolecular structure is a set of three-dimensional coordinates of atoms (\lookat {fig: biostructure}). These coordinates can be obtained experimentally using the methods of X-ray and atomic spectroscopy, or theoretically predicted on the basis of the coding sequence by using computational algorithms. Knowledge of the spatial structure of the biopolymer is necessary because its it functionality and properties are largely dependent on it. The mechanics of the interaction of macromolecules is also largely determined by their three-dimensional structure and the relative positions in space.
+
+
+\includefigure[width=0.8\linewidth]{Conventional representation of protein molecule (1GNA)}{biostructure}
+
+\begin{original}
 Однако, координаты атомов далеко не единственная составляющая макромолекулярной структуры. Принято выделять следующие уровни организации биологической структуры:
 \begin{itemize}
     \item \textbf{Первичная структура} или кодирующая последовательность. Первичная структура эквивалентна химической формуле биополимера.
@@ -114,27 +154,67 @@
     \item \textbf{Третичная структура} -- пространственное строение макромолекулы (набор пространственных координат составляющих её атомов). Зависит не только от первичной и вторичной структур но и в больш\'{о}й степени от окружающей среды в которой биополимер синтезирован. 
     \item \textbf{Четвертичная структура} или доменная представляет собой взаимное расположение нескольких макромолекул в составе единого комплекса 
 \end{itemize}
+\end{original}
 
+However, the coordinates of the atoms is not the only component of the macromolecular structure. It is common to distinguish the following levels of biological organization structure:
+\begin{itemize}
+    \item \textbf{Primary structure} or the coding sequence. The primary structure is equivalent to the chemical formula of the biopolymer.
+    \item \textbf{Secondary structure} is a set of a local sequencing fragments of the macromolecule backbone, primarily stabilized by hydrogen bonds. Secondary structure is completely determined by the coding sequence.
+    \item \textbf{Tertiary structure} is a spatial structure of the macromolecule (a set of spatial coordinates of its constituent atoms). Depends not only on the primary and secondary structures but also on the environment in which the biopolymer was synthesized.
+    \item \textbf{Quaternary structure} or domain structure is the relative position of several macromolecules entering in the composition of the a complex.
+\end{itemize}
+
+\begin{original}
 Таким образом, биологическая макромолекулярная структура может включать в себя: информацию о кодирующей последовательности, информацию о вторичной структуре и доменах (функциональных областях молекулы), информацию о пространственном строении молекулы, кроме того в понятие структуры включают полный граф химических связей. Дело в том, что граф химических связей, как правило, невозможно восстановить из кодирующей последовательности, из-за т.н. посттрансляционных модификаций. Под воздействием окружающей среды структура и химический состав биополимера могут значительно меняться, в состав белков могут войти нестандартные аминокислоты или другие соединения. Для сохранения этой информации и служит граф химических связей, явно описывающей все соединения между атомами.
+\end{original}
  
+Thus, the biological macromolecular structure may include: information on the coding sequence, information about the secondary structure and domains (functional areas of the molecule), information on the spatial structure of the molecule. In addition it may include a complete graph of chemical bonds, usually it is impossible to recover it from the coding sequence, because of the so-called posttranslational modifications. Under the influence of environment structure and chemical composition of the biopolymer can vary considerably, the proteins may include non-standard amino acids or other compounds, this information also saved in graph of chemical bonds, clearly describing the connections between atoms.
+
+\begin{original}
 Дополнительно макромолекулярная структура может содержать различную мета информацию: сведения о том, как структура была получена, описание кристаллографической ячейки, замечания о функциональных особенностях молекулы, ссылки на связанные научные статьи и так далее.
+\end{original}
+
+In addition, macromolecular structure may contain a variety of meta-information: information about how the structure was obtained, a description of the crystallographic cell, remarks on the functional characteristics of the molecule, links to related research papers and so on.
 
 \subsection{PDB database}
+\begin{original}
 В настоящее время существует несколько общедоступных баз данных, аккумулирующих информацию об известных биологических структурах. Среди них можно выделить Protein Data Base \cite{pdb}, в ней доступны все известные на сегодняшний день структуры (более 70000,  изначально в 1971 году в ней было доступно всего 7 структур). Лаборатории, специализирующиеся на изучении биологических структур, пополняют в первую очередь эту базу данных. 
+\end{original}
 
+Currently, there are several publicly available databases accumulating information on known biological structures. Among them are the Protein Data Base \cite{pdb}, all known to the date structures available there (more than 70000, originally in 1971 it was available only 7 structures). Laboratories specializing in the study of biological structures fill up first this database.
+
+\begin{original}
 Данные PDB хранятся в простом текстовом формате. Этот формат получил широкое распространение и является стандартом для инструментов анализа структур, он хорошо подходит для записи результатов структурного выравнивания, о котором пойдет речь ниже.
+\end{original}
+
+PDB data is stored in plain text. This format is widely spread and is a standard for structure analysis tools. It is also well suited for recording the results of structural alignment, which will be discussed below.
 
 \subsection{Structural alignment}
+\begin{original}
 Одним из важных направлений анализа трехмерных структур является поиск сходства среди макромолекул. Эта проблема -- прямая аналогия с очень распространенной в биоинформатике задачей поиска схожих последовательностей. Отличие в том, что поиск основан на нахождении общих черт трехмерных моделей. Иными словами структурное выравнивание -- это способ определения степени схожести молекул по их трехмерной структуре.
 
 \includefigure[clip, trim=0 19.5cm 0 1cm, width=\linewidth]{Структурное выравнивание}{method.pdf}
+\end{original}
 
+One of the important fields of analysis of three-dimensional structures is finding similarities among the macromolecules. This problem is a direct analogy with the very common task in bioinformatics -- searching for the similar sequences. The difference is that the search is based on finding common features of three-dimensional models. In other words, the structural alignment is a method of determining the degree of molecule similarity based on their three-dimensional molecular structure.
+
+\includefigure[clip, trim=0 19.5cm 0 1cm, width=\linewidth]{Structural alignment}{method.pdf}
+
+\begin{original}
 Задача построения структурного выравнивания в простейшем случае сводится к поиску трансформации \textbf{T}, приводящей к оптимальному наложению. Качество наложения задается метрикой 
 \begin{center} $ \operatorname{RMSD}(ref, mob) = \sqrt{ \dfrac{\sum_{i=1}^n \| \mathbf{\bar{x}}_{ref,i} -  \mathbf{\bar{x}}_{mob,i} \| ^2} {n} } $ \end{center}
 чем меньше \textbf{RMSD}, тем больше сходство между структурами,  \textbf{RMSD=0}  означает что структуры идентичны.
 
 Как правило, одна структура остается неподвижной (reference) и трансформация вычисляется только для второй, т.н. мобильной (mobile) структуры.
+\end{original}
 
+In simplest case the problem of building structural alignment is reduced to searching  a transformation \textbf{T} that will give an optimal superposition. Quality of superposition can be measured as 
+\begin{center} $ \operatorname{RMSD}(ref, mob) = \sqrt{ \dfrac{\sum_{i=1}^n \| \mathbf{\bar{x}}_{ref,i} -  \mathbf{\bar{x}}_{mob,i} \| ^2} {n} } $ \end{center}
+less \textbf{RMSD} means better similarity between structures, \textbf {RMSD = 0} means that the structures are identical.
+
+Typically one structure is fixed (reference) and the transformation is computed only for a second so-called mobile structure.
+
+\begin{original}
 Структурное выравнивание является важным инструментом анализа и имеет ряд применений \cite{structural-bionformatics}.
 \begin{itemize}
     \item Классификация биополимеров по структурным паттернам и составление библиотек паттернов для последующего аннотирования
@@ -143,49 +223,109 @@
     \item Методы предсказания структуры для оценки качества результатов требуют сравнения смоделированных структур с заранее известными шаблонами
     \item Структурное выравнивание необходимо как вспомогательный инструмент при конструировании искусственных молекул
 \end{itemize}
+\end{original}
+
+Structural alignment is an important analysis tool and has a number of applications \cite{structural-bionformatics}.
+\begin{itemize}
+    \item Biopolymer classification based on a structural patterns and building pattern libraries for further annotaiton
+    \item Defining functionality of the protein by comparing its structure with the structure of a known protein
+    \item Structural alignment can detect the connection between biopolymers which can be implicit from the sequence alignment
+    \item Structure prediction methods for assessing the quality of the results require a comparison of the simulated structures against known patterns
+    \item  Structural alignment is necessary as an auxiliary tool for the design of artificial molecules
+\end{itemize}
 
 \paragraph{Input and output.}
 % вход
+\begin{original}
 Алгоритм парного структурного выравнивания на входе принимает две трехмерные структуры. Структура может представлять как всю макромолекулу или являться некоторым участком её цепи. Некоторые методы позволяют выравнивать только участки цепи одинаковой длинны. Выбор оптимальных участков в таком случае становится отдельной задачей, например, он может быть сделан на основе выравнивания последовательностей. Существуют также методы предназначенные только для сравнения структур с идентичными последовательностями, они в первую очередь полезны для сравнения разных конформаций одного и того же биополимера. 
+\end{original}
 
+Pair structural alignment algorithm accepts two three-dimensional structures. The structure can be represented as a whole macromolecule, or be a certain portion of the chain. Some methods allow you to align only the parts of a chain of equal length. Choosing the best sites in this case is a separate problem, for instance decision can be based on sequence alignments. There are also techniques intended only for the comparison of structures with identical sequences, they are primarily useful for comparing different conformations of the same biopolymer.
+
+\begin{original}
 Известно, что молекулы белков представляют собой линейные полимеры, при этом можно выделить основную цепь молекулы и присоединенные к ней боковые цепи (радикалы аминокислот) \lookat{fig:backbone}. Существуют различные варианты для выбора подмножества атомов которые будут участвовать в выравнивании и расчете RMSD. При выравнивании структур с сильно различающимися последовательностями, атомы боковых цепей не учитываются. Иначе при расчете RMSD большое число не совпадающих атомов боковых цепей будет преобладать, даже в случае если основные цепи совпадут. По этой причине многие алгоритмы структурного выравнивания по-умолчанию учитывают только атомы основной цепи. Дополнительно, для упрощения вычислений могут учитываться только альфа-атомы углерода, так как координаты альфа-атомов углерода полностью задают структуру основной цепи. Только в случае когда кодирующие последовательности белков обладают высоким сходством или полностью идентичны имеет смысл строить выравнивание с учетом атомов боковых цепей, в таком 
-случае RMSD показывает не только сходство структуры основной цепи но и совпадение положений атомов боковых цепей. Для улучшения результатов выравнивания можно дополнительно учитывать совпадения вторичной структуры, схем водородных, ковалентных и ионных связей и другие факторы \cite{wiki-3}. 
+случае RMSD показывает не только сходство структуры основной цепи но и совпадение положений атомов боковых цепей. Для улучшения результатов выравнивания можно дополнительно учитывать совпадения вторичной структуры, схем водородных, ковалентных и ионных связей и другие факторы \cite{wiki-3}.
+\end{original}
 
+It is known that protein molecules are linear polymers that can be identified with the main chain of the molecule and attached to her side chains (amino acid radicals) \lookat{fig: backbone}. There are various options for selecting a subset of atoms that participate in the calculation of alignment and RMSD. For aligning structures with very different sequences the atoms of the side chains often are not counted. Otherwise the resulting RMSD would be biased by a prevailing number of side chains atoms even if the main chains match. For this reason, many structural alignment algorithms by the default account only the backbone atoms. In addition to simplify the calculations only the alpha-carbon atoms can be taken into account since the coordinates of the alpha-carbon atoms completely determine the structure of the main chain. Only in the case when the protein coding sequences have high similarity or even are identical it makes sense to build the alignment including atoms of the side chains, then  RMSD shows not only the similarity of the structure of the main chain but also the coincidence of positions of the atoms of side chains. The coincidence of the secondary structure diagrams, hydrogen, covalent and ionic bonds, and other factors can be concidered for improving the quiality of alignment \cite {wiki-3}.
+
+\begin{original}
 \includefigure[width=0.9\linewidth]{Участок основной цепи молекулы белка. Боковые цепи изображены тонкими линиями. Цветами обозначены химические элементы: углерод(C) -- зеленым, азот(N)~--~синим, кислород(O) -- красным.}{backbone}
+\end{original}
+
+\includefigure[width=0.9\linewidth]{Protein backbone region. Side chains are shown in thick lines. Chemical elements shown with coolr: carbon(C) -- green, nitrogen(N)~--~blue, oxygen(O) -- red.}{backbone}
 
 % выход
+\begin{original}
 Результатом работы алгоритма или структурным выравниванием являются преобразованные трехмерные структуры и вычисленное значение RMSD. Вместо преобразованных координат мобильной структуры достаточно рассматривать только матрицу (4$\times$4) задающую преобразование сдвига/поворота. Формат PDB позволяет записать обе структуры, reference и mobile, в один файл, что делает его удобным для хранения структурного выравнивания.
+\end{original}
 
+The results of the algorithm or a structural alignment are converted three-dimensional structures and the calculated value of RMSD. It is reasonable to consider only the matrix (4$\times$4) which specifies the transformation of the shift/rotation instead of whole set of transformed coordinates. PDB format allows to store both reference and mobile structures  in a single file making it suitable for storing the structural alignments.
+
+\newpage
 \paragraph{Relation with sequence alignment.}
+\begin{original}
 Наряду с методами, опирающихся исключительно на информацию о трехмерной структуре, существуют подходы учитывающие также информацию о кодирующей последовательности. Первым шагом работы таких алгоритмов является построение выравнивания последовательностей. Наличие такого выравнивания позволяет выделить участки молекулярных цепей, где последовательности похожи или идентичны, и рассматривать в дальнейшем только эти участки при сравнении структур. Имеет место и обратная задача -- построение выравнивания последовательностей по известному наложению структур.
+\end{original}
+
+In addition to methods that rely solely three-dimensional structure there are approaches that  taking into account information of the coding sequence. The first step of these algorithms is the construction of sequence alignment. The presence of such alignment can identify areas of molecular chains where the sequences are similar or identical and consider further only those sections when comparing structures. There is also the inverse problem -- the construction of sequence alignment based on known structural superposition.
 
 \paragraph{Algorithmic complexity.}
+\begin{original}
 Не смотря на то, что некоторые близкие проблемы структурной биоинформатики являются NP-полными, для задачи структурного выравнивания NP-полнота не доказана. Более того, точное решение известно для некоторых специальных метрик GDT\_TS \cite{wiki-2} и MaxSub \cite{wiki-11}. Но практическое применение точных алгоритмов использующих эти метрики не целесообразно из-за все еще большой вычислительной сложности, которая, зависит не только от размера входных структур, но и от их строения  \cite{wiki-12}. Большинство методов полагаются на эвристические алгоритмы.
+\end{original}
+
+Despite the fact that some of the close structural bioinformatics problems are NP-complete  the problem of structural alignment isn't proven to be NP-complete. Moreover the exact solution is known for certain special metrics GDT\_TS \cite{wiki-2} and MaxSub \cite{wiki-11}. But the real application of exact algorithms using these metrics is impractical due to the still high computational complexity which depends not only on the size of the input structures but also on their structure features \cite{wiki-12}. Most methods still rely on heuristic algorithms.
 
 \paragraph{Structural alignment visualization.}
+\begin{original}
 Трехмерная визуализация является естественным способом представления структурного выравнивания. Она преследует те же цели что и трехмерная визуализация макромолекулярных структур. Прежде всего, она позволяет нагляднее представлять громоздкие химические формулы соответствующие сложным соединениям. Визуализация помогает увидеть новые особенности исследуемых структур или закономерности в строении биополимера. Еще одним важным применением визуализации является использование изображений в научных публикациях и образовательных ресурсах с целью демонстрации свойств биологического объекта или в виде пояснения для идей и выводов.
+\end{original}
+
+Three-dimensional visualization is a natural way to represent the structural alignment. It pursues the same objectives as the three-dimensional visualization of macromolecular structures. First it allows you to graphically represent the bulky chemical formula corresponding to complex compounds. Visualization helps to see the new features of the structures or patterns in the structure of the biopolymer. Another important application is the use of image visualization in scientific publications and educational resources in order to demonstrate the properties of a biological object or in the form of ideas and explanations for the findings.
 
 
 % -------------------- Обзор существующих решений----------------------
 \section{Overview of existing solutions}
+\begin{original}
 На данный момент существует широкий ряд программных продуктов позволяющих решать различные задачи в области автоматизации анализа и визуализации биологических макромолекулярных структур. Разработано большое количество алгоритмов выравнивания структур реализующих различные подходы. Многие из этих реализаций представлены только в виде веб-сервисов. Значительным недостатком таких решений является большое время выполнения анализа, это создает определенные неудобства и делает невозможным многократный запуск выравниваний. Гораздо меньшее количество программ позволяют выполнять выравнивание локально и использовать этот инструмент в совокупности с другими видами анализа. В этом разделе кратко рассмотрены наиболее эффективные и широко используемые из таких решений.
+\begin{original}
+
+At the moment there is a wide range of software which is intended for solving various problems in the automation of analysis and visualization of biological macromolecular structures. There is a number of algorithms for aligning structures implementing different approaches. Many of these implementations are presented only as a Web service. A significant drawback of such solutions is the large analysis run-time, it creates some inconvenience and makes it impossible to run multiple alignments. A much smaller number of programs allows to preform alignment locally and use this tool in conjunction with other types of analysis. In this section we briefly discuss the most effective and widely used of these solutions.
 
 % --- The Swiss Institute of Bioinformatics Swiss-PdbViewer (Deep View) ---
 \paragraph{Swiss-PdbViewer (Deep View) \cite{deep-view}}
+\begin{original}
 приложение с дружественным графическим интерфейсом. Включающее широкий спектр средств анализа и визуализации биологических структур. В том числе и несколько инструментов сравнения структур:
 \begin{itemize}
     \item \textbf{Magic Fit} производит наложение структур на основе выравнивания последовательностей.
     \item \textbf{Iterative Magic Fit} производит наложение структур с помощью \textbf{Magic Fit}, и затем выполняет оптимизацию RMSD.
     \item \textbf{Explore Domain Alternate Fits} вычисляет структурное выравнивание учитывая при этом только третичную структуру.
 \end{itemize}
+\end{original}
 
+application with a friendly graphical interface. It includes a wide range of biological structures analysis and visualization tools, including a number of structure comparison tools:
+\begin{itemize}
+    \item \textbf{Magic Fit} produces a structure superposition based on sequence alignment.
+    \item \textbf{Iterative Magic Fit} produces a structure superposition using \textbf{Magic Fit}, and then performs the RMSD optimization.
+    \item \textbf{Explore Domain Alternate Fits} computes a structural alignment based only on the tertiary structure.
+\end{itemize}
+
+\begin{original}
 Среди особенностей можно отметить возможность выравнивать с помощью инструментов Magic Fit и Iterative Magic Fit модели состоящие из нескольких цепей и визуализацию с применением специальной цветовой схемы, где интенсивность цвета зависит от величины расхождения молекулярных цепочек.
 
 Недостатком является отсутствие поддержки Linux платформ.
+\end{original}
+
+The features include an opportunity to align with the Magic Fit and Iterative Magic Fit tools  models consisting of several chains, and also visualization using a special color scheme, where the intensity of the color depends on the divergence of the molecular chains.
+
+The lack of support for Linux platforms is considered as main disadvantage.
 
 % --- UCSF Chimera  ---
 \paragraph{UCSF Chimera \cite{chimera}}
+\begin{original}
 кроссплатформенный инструмент визуализации биологических структур, реализованный на языке Python. Наряду с визуализацией предоставляет некоторые возможности анализа структур. Построение структурного выравнивания производится в два этапа: сначала производится выравнивание последовательностей, а затем на основе него выполняется наложение трехмерных структур \cite{chimera-alignment}. При этом, могут учитываться особенности вторичной структуры. Есть возможность решать обратную задачу: вычислять выравнивание последовательностей по существующему выравниванию структур.
+\end{original}
 
 % --- PyMOL ---
 \paragraph{PyMOL \cite{pymol}}
