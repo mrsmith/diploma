@@ -95,11 +95,11 @@
 аналитически, не прибегая к дорогостоящим и длительным экспериментам.
 \end{original}
 
-Bioinformatics researches are highly relevant nowdays.
+Bioinformatics researches are highly relevant today.
 Modern computational power allows to deal with large volumes of data typical for
-biological objects, and perform complex mathematical calculations in a
+biological objects and perform complex mathematical calculations in a
 reasonable time. Bioinformatics tools allow researchers to efficiently automate
-the processing of data, and in some cases, to solve problems analytically,
+the processing of data, and in some cases to solve problems analytically
 without carrying out costly and time-consuming experiments.
 
 \begin{original}
@@ -141,8 +141,8 @@ simulation and others.
 \end{original}
 
 An essential tool for the structure analysis is a tool for building structural
-alignment, allowing the structure to compare with each other. It is necessary
-for solving number of structural biology problems, such as: search for homology
+alignment allowing the structure to compare with each other. It is necessary
+for solving number of structural biology problems such as: search for homology
 among the objects, the classification of structural features, the definition of
 functionality and structure prediction of biopolymers,
 
@@ -166,7 +166,7 @@ structural alignment which is based on the open source project Unipro UGENE
 which supports a large number of tools for analyzing sequences of DNA, RNA and
 amino acids. UGENE is a multiplatform application that allows you to achieve
 maximum productivity through platform-specific optimizations. At the moment
-UEGENE is capable of visualizing three-dimensional structures, as well as some
+UEGENE is capable of visualizing three-dimensional structures as well as some
 of the basic methods of structural analysis, therefore the implementation tools
 of structural alignment is a natural step in the evolution of the project.
 
@@ -181,7 +181,7 @@ of structural alignment is a natural step in the evolution of the project.
 The integration of components developed with an existing set of UGENE tools will
 bring a comprehensive tool for multi-level analysis of biological objects. This
 tool will enable more effective solutions for complex multi-step tasks
-associated with macromolecular structures, and will undoubtedly increase the
+associated with macromolecular structures and will undoubtedly increase the
 efficiency of researchers in this field.
 
 % В чем научная новизна?
@@ -469,7 +469,7 @@ RMSD. При выравнивании структур с сильно разл�
 
 It is known that protein molecules are linear polymers that can be identified
 with the main chain of the molecule and attached to her side chains (amino acid
-radicals) \lookat{fig: backbone}. There are various options for selecting a
+radicals) \lookat{fig:backbone}. There are various options for selecting a
 subset of atoms that participate in the calculation of alignment and RMSD. For
 aligning structures with very different sequences the atoms of the side chains
 often are not counted. Otherwise the resulting RMSD would be biased by a
@@ -606,8 +606,8 @@ In this section we briefly discuss the most effective and widely used of these
 solutions.
 
 % --- The Swiss Institute of Bioinformatics Swiss-PdbViewer (Deep View) ---
-\paragraph{Swiss-PdbViewer (Deep View) \cite{deep-view}}
 \begin{original}
+\paragraph{Swiss-PdbViewer (Deep View) \cite{deep-view}}
 приложение с дружественным графическим интерфейсом. Включающее широкий спектр
 средств анализа и визуализации биологических структур. В том числе и несколько
 инструментов сравнения структур:
@@ -621,9 +621,10 @@ solutions.
 \end{itemize}
 \end{original}
 
-application with a friendly graphical interface. It includes a wide range of
-biological structures analysis and visualization tools, including a number of
-structure comparison tools:
+\paragraph{Swiss-PdbViewer (Deep View) \cite{deep-view}}
+is an application with a user-friendly graphical interface. It includes a
+wide range of biological structures analysis and visualization tools, including
+a number of structure comparison tools:
 \begin{itemize}
     \item \textbf{Magic Fit} produces a structure superposition based on
 sequence alignment.
@@ -650,8 +651,8 @@ divergence of the molecular chains.
 The lack of support for Linux platforms is considered as main disadvantage.
 
 % --- UCSF Chimera  ---
-\paragraph{UCSF Chimera \cite{chimera}}
 \begin{original}
+\paragraph{UCSF Chimera \cite{chimera}}
 кроссплатформенный инструмент визуализации биологических структур, реализованный
 на языке Python. Наряду с визуализацией предоставляет некоторые возможности
 анализа структур. Построение структурного выравнивания производится в два этапа:
@@ -662,7 +663,16 @@ The lack of support for Linux platforms is considered as main disadvantage.
 выравниванию структур.
 \end{original}
 
+\paragraph{UCSF Chimera \cite{chimera}}
+is a cross platform tool intended for biostructure visualization written in Python.
+As well as visualization capabilities is contains ability to compare structures.
+Structure alignment is divided into two steps: first is the sequence alignment,
+and the second is a based on it structure imposition \cite{chimera-alignment}.
+Secondary structure features are taken into account. Reverse problem of aligning
+sequences based on structural superposition can also be solved.
+
 % --- PyMOL ---
+\begin{original}
 \paragraph{PyMOL \cite{pymol}}
 программа на языке Python, предназначенная для визуализации биологических
 структур, с возможностью строить наложение трехмерных структур через
@@ -671,7 +681,16 @@ The lack of support for Linux platforms is considered as main disadvantage.
 молекулярных цепочек. Несмотря на то, что программа имеет графический интерфейс,
 выполнения выравнивания возможно только через текстовую консоль, или посредством
 написания скрипта.
+\end{original}
 
+\paragraph{PyMOL \cite{pymol}}
+is a Python program mostly intended for biostructure visualization with capability of
+building structural alignment based on sequence alignment. Advanced structural alignment
+visualization features include possibility to apply color scheme which stress structure
+differences. In spite of having graphical interface the only possibility to build
+structural alignment is writing Python script.
+
+\begin{original}
 \paragraph{}
 Веб-сервисы построения структурного выравнивания \textbf{FAST} и
 \textbf{MultiProt} предоставляют для загрузки дистрибутивы программ, которые
@@ -679,12 +698,20 @@ The lack of support for Linux platforms is considered as main disadvantage.
 программы предназначены только для структурного выравнивания и требуют
 использования сторонних пакетов для визуализации. Для таких решений характерно
 отсутствие поддержки операционной системы Microsoft Windows.
+\end{original}
+
+\paragraph{}
+\textbf{FAST} and \textbf{MultiProt} web-services also provide standalone tools
+for structural alignment. These packages are highly specialized in building
+alignments and require third-party tools for visualization. Lack of Windows
+platforms support is typical for these solutions.
 
 
 % -------------------- Постановка задачи ------------------------------
 \section{Problem statement}	% название данной секции стандартно
 
 \subsection{Analysis of existing solutions}
+\begin{original}
 Вышеперечисленные решения в области анализа и визуализации биологических
 макромолекулярных структур (см. раздел 3) имеют ряд недостатков. Условно можно
 разделить все решения на две категории: специализированные на построении
@@ -697,16 +724,44 @@ The lack of support for Linux platforms is considered as main disadvantage.
 отнести неудобный визуальный пользовательский интерфейс или его отсутствие,
 невысокая производительность решений, реализованных на интерпретируемых языках и
 ограниченная поддержка платформ у нативных решений.
+\end{original}
 
+The described in the sec. 3 biological macromolecular structures analysis and
+visualization solutions have number of disadvantages which can limit their
+usage. For convenience these tools can be divided into two categories:
+specialized in building structural alignment and universal toolkits which
+include structural analysis as well as lots of other instruments. For the first
+group is typical the absence of integration with other tools and as a consequence
+the impossibility of usage outcomes of the algorithm for further analysis. For
+the second focusing only on the three-dimensional model and a weak relationship
+with the biological sequence  which is the basis of the structure. Common
+disadvantages can include an inconvenient graphical user interface or low
+performance for solutions implemented in an interpreted languages and limited
+support for platforms for native solutions.
+
+\begin{original}
 Реализация инструмента построения выравнивания биологических структур на базе
 платформы Unipro UGENE позволит преодолеть эти недостатки.
+\end{original}
 
+The implementation of structural alignment tools on the basis of Unipro UGENE
+platform can help to overcome these limitations.
+
+\newpage
 \subsection{Objectives}
+\begin{original}
 Целью дипломной работы является создание программного компонента, позволяющего
 автоматизировать и упростить процесс построения структурного выравнивания
 биологических макромолекулярных структур и интеграция этого инструментария с
 системой Unipro UGENE.
+\end{original}
 
+The goal of the work is to create a set of software components that allow
+automate and simplify the process of constructing a structural alignment of
+biological macromolecular structures. These tools should be integrated into
+Unipro UGENE bioinformatics platform.
+
+\begin{original}
 Созданный набор компонентов должен обеспечить:
 \begin{itemize}
     \item \textbf{Инструмент построения структурного выравнивания} на базе
@@ -739,7 +794,44 @@ UGENE.
     \item \textbf{Тестовую базу}, которая гарантирует корректность работы
 разработанного компонента.
 \end{itemize}
+\end{original}
 
+Designed toolkit should provide following capabilities:
+\begin{itemize}
+    \item \textbf{Structural alignment tool} based on an actual algorithm.
+
+    \item \textbf{Graphical user interface.} User-friendly graphical interface
+        must effectively address the challenges facing researcher-biologist.
+
+    \item \textbf{Tight integration} with the existing UGENE toolkit.
+
+    \item \textbf{3D visualization of alignment.}
+        Existing visualization module \module{BioStruct3DView} should be enhanced
+        for displaying alignments. User should be able view both or several structures,
+        flexibly control the parameters of the mapping of the molecules. Particular
+        color scheme is necessary to make visualization more descriptive.
+
+    \item \textbf{Portability and performance.} Portability refers to ability to
+        run on variety of platforms supported by UGENE framework. At the same time the
+        solution must provide competitive performance comparable with existing
+        widespread solutions.
+
+    \item \textbf{Extensibility.} This includes the ability of further integration of
+        new alignment algorithms for alignment, extensible visualization engine and
+        integration with external tools through the implementation of alignments import
+        and export.
+
+    \item \textbf{Test base}, which will validate functionality correctness.
+\end{itemize}
+
+\section{Results}
+\todo{What was fucking done?}
+
+Was preformed analysis of existing solutions and approaches.\\
+Chosen open-source PTools library. \\
+Designed API. \\
+Implemented visualizer with particular color scheme. \\
+Tested.\\
 
 % -------------------- Реализация -------------------------------------
 \begin{original}
