@@ -2,8 +2,7 @@
     \usepackage[T2A]{fontenc}
     \usepackage[utf8]{inputenc}
     \usepackage[english]{babel}
-
-\usepackage[left=3cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+    \usepackage[left=3cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
     \usepackage{color}
     \usepackage{amsmath}
     \usepackage{cite}
@@ -55,11 +54,9 @@
 
 \addto\captionsenglish{
     %\renewcommand\contentsname{Содержание}
-    % перекрываю \refname, чтобы список литературы сам добавлял себя в
-оглавление
+    % перекрываю \refname, чтобы список литературы сам добавлял себя в оглавление
     \let\oldrefname\refname
-
-\renewcommand\refname{\addcontentsline{toc}{section}{\oldrefname}\oldrefname}
+    \renewcommand\refname{\addcontentsline{toc}{section}{\oldrefname}\oldrefname}
 }
 
 \newcommand{\todo}[1]{\textbf{\textcolor{red}{TODO: #1}}}
